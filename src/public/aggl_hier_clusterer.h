@@ -11,8 +11,8 @@
 #include <cstdio>
 #include <assert.h>
 
-#include "ClusterNode.h"
-#include "DistanceCalculator.h"
+#include "cluster_node.h"
+#include "distance_calculator.h"
 
 namespace cluster {
 class AgglHierClusterer {
@@ -95,9 +95,10 @@ public:
 
 public:
     AgglHierClusterer(DistanceCalculatorType::Type type = DistanceCalculatorType::AVERAGE):  // NOLINT
+            node_num_(0),
             base_node_num_(0),
-            cluster_node_array_(NULL),
-            distance_matrix_(NULL) {
+            distance_matrix_(NULL),
+            cluster_node_array_(NULL) {
         distance_calculator_ =
                 DistanceCalculatorFactory::createCalculator(type);
     }

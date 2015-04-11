@@ -30,12 +30,14 @@ public:
             int right_child_label = -1,
             int basic_node_num = 1,
             int distance_matrix_label = -1,
+            float distance = 0.0,
             std::string cluster_name = "")
             : label_(label),
               left_child_label_(left_child_label),
               right_child_label_(right_child_label),
               basic_node_num_(basic_node_num),
               distance_matrix_label_(distance_matrix_label),
+              distance_(distance),
               cluster_name_(cluster_name) {}
 
     void init(int label, int distance_matrix_label, std::string name) {

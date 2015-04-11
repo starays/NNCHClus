@@ -4,13 +4,14 @@
 
 #include <cassert>
 #include <cstdio>
+#include <cstdlib>
 #include <string>
 #include <vector>
 #include <stack>
 #include <queue>
-#include "ClusterNode.h"
+#include "cluster_node.h"
 
-#include "AgglHierClusterer.h"
+#include "aggl_hier_clusterer.h"
 
 namespace cluster {
 
@@ -52,8 +53,9 @@ int AgglHierClusterer::findNearestNeighbor(
                 cluster_node_array_[i].getLabel() == node.getLabel()) {
             continue;
         }
-        int distance_index =
-                getDistanceMatrixIndex(node, cluster_node_array_[i]);
+        int distance_index = getDistanceMatrixIndex(
+                distance_matrix_label,
+                cluster_node_array_[i].getDistanceMatrixLabel());
         if (min_distance < 0.0
                 || distance_matrix_[distance_index] < min_distance) {
             min_distance = distance_matrix_[distance_index];

@@ -4,7 +4,7 @@
 #include <cstdio>
 #include <cstdlib>
 
-#include "AgglHierClusterer.h"
+#include "aggl_hier_clusterer.h"
 
 int main(int argc, char ** argv) {
     if (argc != 5) {
@@ -34,6 +34,6 @@ int main(int argc, char ** argv) {
     // put the cluster tree to outfile
     clusterer->output(argv[4]);
     // put the cluster name to outfile
-    clusterer->output(std::string(argv[4]) + ".cluster", 0.15);
+    clusterer->output(std::string(argv[4]) + ".cluster", sim_threshold);
     delete clusterer;
 }
